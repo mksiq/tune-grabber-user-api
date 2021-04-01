@@ -29,3 +29,21 @@ app.use(cors());
     process.exit();
   }
 })();
+
+app.post("/api/register", async (req, res) => {
+  try {
+    const msg = await userService.registerUser(req.body);
+    res.json({ message: msg });
+  } catch (err) {
+    res.status(422).json({ message: err });
+  }
+});
+
+app.post("/api/login", async (req, res) => {
+  try {
+    await userService.checkUser(req.body);
+    res.json({ message: "login successful" });
+  } catch (err) {
+    res.status(422).json({ message: err });
+  }
+});
