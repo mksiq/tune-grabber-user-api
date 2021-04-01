@@ -121,3 +121,11 @@ app.delete(
     }
   }
 );
+
+
+app.get(
+  "/",
+  (req, res) => {
+    res.send({message: "Api listening"});
+  }
+);
