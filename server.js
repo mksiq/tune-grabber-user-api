@@ -57,6 +57,7 @@ app.use(passport.initialize());
 })();
 
 app.post("/api/register", async (req, res) => {
+  console.log("Inside register");
   try {
     const msg = await userService.registerUser(req.body);
     res.json({ message: msg });
@@ -122,10 +123,6 @@ app.delete(
   }
 );
 
-
-app.get(
-  "/",
-  (req, res) => {
-    res.send({message: "Api listening"});
-  }
-);
+app.get("/", (req, res) => {
+  res.send({ message: "Api listening" });
+});

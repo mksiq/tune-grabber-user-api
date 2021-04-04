@@ -1,19 +1,18 @@
-# POST http://localhost:8080/api/register
+POST https://tune-grabber-user-api.herokuapp.com/api/register
+Content-Type: application/json
+
+{
+    "password": "12345",
+    "password2": "12345",
+    "userName": "Hello"
+}
+
+# GET https://tune-grabber-user-api.herokuapp.com/
+
+# POST https://tune-grabber-user-api.herokuapp.com/api/login
 # Content-Type: application/json
 
 # {
-
-#     "password": "12345",
-#     "password2": "12345",
-#     "userName": "Hello"
-# }
-
-
-# POST http://localhost:8080/api/login
-# Content-Type: application/json
-
-# {
-
 #     "password": "12345",
 #     "userName": "Hello"
 # }
@@ -25,10 +24,10 @@
 # Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY0ZmUxNTlhMzNhZTJmYjU1NmIyN2UiLCJ1c2VyTmFtZSI6IkhlbGxvIiwiaWF0IjoxNjE3Mjk3MDA5fQ.KK5M2ihkZFt-rH2wp_GIFHI-VgDQIOlLw_QLh1TOi6A
 
 
-PUT  http://localhost:8080/api/user/favourites/2
-Content-Type: application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY0ZmUxNTlhMzNhZTJmYjU1NmIyN2UiLCJ1c2VyTmFtZSI6IkhlbGxvIiwiaWF0IjoxNjE3Mjk3MDA5fQ.KK5M2ihkZFt-rH2wp_GIFHI-VgDQIOlLw_QLh1TOi6A
+# PUT  http://localhost:8080/api/user/favourites/2
+# Content-Type: application/json
+# Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY0ZmUxNTlhMzNhZTJmYjU1NmIyN2UiLCJ1c2VyTmFtZSI6IkhlbGxvIiwiaWF0IjoxNjE3Mjk3MDA5fQ.KK5M2ihkZFt-rH2wp_GIFHI-VgDQIOlLw_QLh1TOi6A
 
-{
-    "id": "2"
-}
+# {
+#     "id": "2"
+# }

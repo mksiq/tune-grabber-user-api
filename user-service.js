@@ -135,4 +135,3 @@ module.exports.removeFavourite = function (id, favId) {
       });
   });
 };
-
