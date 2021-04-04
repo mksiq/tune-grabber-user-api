@@ -104,18 +104,22 @@ module.exports.addFavourite = function (id, favId) {
       .exec()
       .then((user) => {
         if (user.favourites.length < 50) {
-          User.findByIdAndUpdate(
-            id,
-            { $addToSet: { favourites: favId } },
-            { new: true }
-          )
-            .exec()
-            .then((user) => {
-              resolve(user.favourites);
-            })
-            .catch((err) => {
-              reject(`Unable to update favourites for user with id: ${id}`);
-            });
+          if(!user.favourites.includes(favId)){
+            User.findByIdAndUpdate(
+              id,
+              { $addToSet: { favourites: favId } },
+              { new: true }
+              )
+              .exec()
+              .then((user) => {
+                resolve(user.favourites);
+              })
+              .catch((err) => {
+                reject(`Unable to update favourites for user with id: ${id}`);
+              });
+            } else {
+              reject('This music is already in your favourite list')
+            }
         } else {
           reject(`Unable to update favourites for user with id: ${id}`);
         }
